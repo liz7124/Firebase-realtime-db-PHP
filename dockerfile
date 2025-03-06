@@ -14,6 +14,9 @@ COPY src/ /var/www/src/
 # Pastikan index.php ditemukan sebagai halaman utama
 RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
 
+# Set ServerName untuk menghindari error
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Expose port 80 (default untuk Apache)
 EXPOSE 80
 
