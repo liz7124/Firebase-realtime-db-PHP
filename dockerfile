@@ -29,6 +29,8 @@ COPY src/ /var/www/src/
 #RUN composer install --no-dev --prefer-dist --optimize-autoloader
 RUN composer require kreait/firebase-php
 
+RUN ls -al
+
 # Pastikan index.php ditemukan sebagai halaman utama
 RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
 
