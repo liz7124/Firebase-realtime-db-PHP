@@ -26,7 +26,7 @@ COPY public/ /var/www/html/
 COPY src/ /var/www/src/
 
 # Install dependensi PHP menggunakan Composer
-RUN composer install --no-dev --prefer-dist --optimize-autoloader
+#RUN composer install --no-dev --prefer-dist --optimize-autoloader
 RUN composer require kreait/firebase-php
 
 # Pastikan index.php ditemukan sebagai halaman utama
