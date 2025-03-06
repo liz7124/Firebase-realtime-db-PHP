@@ -43,6 +43,6 @@ $users = $database->getReference('users')->getValue();
     </table>
 
     <br>
-    <a href="insert.php">Tambah User Baru</a>
+    <a href="index.php">Tambah User Baru</a>
 </body>
 </html>
