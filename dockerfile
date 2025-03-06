@@ -4,6 +4,17 @@ FROM php:8.1-apache
 # Install ekstensi PHP yang dibutuhkan (jika ada)
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+# Install dependensi yang dibutuhkan untuk Composer
+RUN apt-get update && apt-get install -y \
+    curl \
+    unzip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download dan install Composer secara manual
+#RUN curl -sS https://getcomposer.org/installer | php && \
+#    mv composer.phar /usr/local/bin/composer
+
 # Download dan install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
